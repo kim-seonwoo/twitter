@@ -1,8 +1,28 @@
-import React from "react";
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import Auth from "../routes/Auth";
+import Home from "../routes/Home";
+import Navigation from "routes/Navigation";
+import Profile from "routes/Profile";
+const AppRouter = ({ isLoggedIn, userObj }) => {
+  return (
+    <BrowserRouter>
+      {isLoggedIn && <Navigation />}
 
-function Router(props) {
-  return <div></div>;
-}
+      <Routes>
+        {isLoggedIn ? (
+          <>
+            {" "}
+            <Route path="/" element={<Home userObj={userObj} />} />
+            <Route path="/profile" element={<Profile />} />
+          </>
+        ) : (
+          <>
+            <Route path="/" element={<Auth />} />
+          </>
+        )}
+      </Routes>
+    </BrowserRouter>
+  );
+};
 
-export default Router;
+export default AppRouter;
