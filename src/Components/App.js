@@ -23,7 +23,6 @@ function App() {
   }, []);
   return (
     <>
-      <div>hi</div>
       {init ? (
         <AppRouter isLoggedIn={isLoggedIn} userObj={userObj} />
       ) : (
