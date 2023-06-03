@@ -115,7 +115,7 @@ function Nweet({ e, isOwner }) {
       ) : (
         <NweetContent>
           <h4>{e.text}</h4>
-          <p>{displayName}</p>
+          <p>"익명의 사용자"</p>
           {isOwner && (
             <NweetButtons>
               <button onClick={onDeleteClick}>Delete</button>
