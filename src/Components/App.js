@@ -5,7 +5,7 @@ import Auth from "routes/Auth";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 function App() {
   const [init, setInit] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [userObj, setUserObj] = useState(null);
 
   useEffect(() => {
